@@ -14,6 +14,10 @@
 		4D149EAC1FD87B4B008888D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D149EAA1FD87B4B008888D6 /* LaunchScreen.storyboard */; };
 		4D149EB71FD87B4B008888D6 /* StarWarsTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EB61FD87B4B008888D6 /* StarWarsTableViewTests.swift */; };
 		4D149EC21FD87B4B008888D6 /* StarWarsTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EC11FD87B4B008888D6 /* StarWarsTableViewUITests.swift */; };
+		4D149ED01FD87B86008888D6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149ECF1FD87B86008888D6 /* NetworkManager.swift */; };
+		4D149ED21FD87C70008888D6 /* StarWarsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149ED11FD87C70008888D6 /* StarWarsAPI.swift */; };
+		4D149ED71FD889A6008888D6 /* StarWarsCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149ED61FD889A6008888D6 /* StarWarsCharacterModel.swift */; };
+		4D149EDA1FD88B23008888D6 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149ED91FD88B23008888D6 /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		4D149EBD1FD87B4B008888D6 /* StarWarsTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarWarsTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D149EC11FD87B4B008888D6 /* StarWarsTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsTableViewUITests.swift; sourceTree = "<group>"; };
 		4D149EC31FD87B4B008888D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D149ECF1FD87B86008888D6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4D149ED11FD87C70008888D6 /* StarWarsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsAPI.swift; sourceTree = "<group>"; };
+		4D149ED61FD889A6008888D6 /* StarWarsCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacterModel.swift; sourceTree = "<group>"; };
+		4D149ED91FD88B23008888D6 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				4D149EA11FD87B4B008888D6 /* AppDelegate.swift */,
+				4D149ED41FD8892C008888D6 /* API */,
 				4D149EA31FD87B4B008888D6 /* ViewController.swift */,
+				4D149ED31FD88916008888D6 /* Model */,
+				4D149ECF1FD87B86008888D6 /* NetworkManager.swift */,
+				4D149ED81FD88B16008888D6 /* Helper */,
 				4D149EA51FD87B4B008888D6 /* Main.storyboard */,
 				4D149EA81FD87B4B008888D6 /* Assets.xcassets */,
 				4D149EAA1FD87B4B008888D6 /* LaunchScreen.storyboard */,
@@ -123,6 +135,30 @@
 				4D149EC31FD87B4B008888D6 /* Info.plist */,
 			);
 			path = StarWarsTableViewUITests;
+			sourceTree = "<group>";
+		};
+		4D149ED31FD88916008888D6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D149ED61FD889A6008888D6 /* StarWarsCharacterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D149ED41FD8892C008888D6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4D149ED11FD87C70008888D6 /* StarWarsAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4D149ED81FD88B16008888D6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4D149ED91FD88B23008888D6 /* Parser.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +295,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D149ED01FD87B86008888D6 /* NetworkManager.swift in Sources */,
+				4D149ED71FD889A6008888D6 /* StarWarsCharacterModel.swift in Sources */,
+				4D149EDA1FD88B23008888D6 /* Parser.swift in Sources */,
+				4D149ED21FD87C70008888D6 /* StarWarsAPI.swift in Sources */,
 				4D149EA41FD87B4B008888D6 /* ViewController.swift in Sources */,
 				4D149EA21FD87B4B008888D6 /* AppDelegate.swift in Sources */,
 			);
