@@ -10,4 +10,5 @@ import Foundation
 
 class DataSource {
     static var starWarsCharacterList: [StarWarsCharacterModel] = []
+    static var starWarsNextURL: String?
 }

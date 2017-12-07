@@ -24,4 +24,5 @@ struct StarWarsAPI {
     static let charGenderKey = "gender"
 
     static let characterListResults = "results"
+    static let starWarsNextURL = "next"
 }

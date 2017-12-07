@@ -9,13 +9,13 @@
 import Foundation
 
 class NetworkManager {
-    weak var delegate: NetworkManagerDelegate?
+    var delegate: NetworkManagerDelegate?
     
-    func downloadAPICharacter(){
+    func downloadAPICharacterAt(urlString: String? = StarWarsAPI.characterListEndpoint){
         print("download API Characters")
 //        let urlString = StarWarsAPI.characterEndPoint
-        let urlString = StarWarsAPI.characterListEndpoint
-        guard let url = URL(string: urlString) else {
+//        let urlString = StarWarsAPI.characterListEndpoint
+        guard let url = URL(string: urlString!) else {
             print("something wrong with url")
             return
         }
@@ -39,11 +39,12 @@ class NetworkManager {
 //                }
                 
                 //parse list of star wars characters
-                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any], let results = jsonArray[StarWarsAPI.characterListResults] as? [[String:Any]]{
+                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any], let results = jsonArray[StarWarsAPI.characterListResults] as? [[String:Any]], let nextURL = jsonArray[StarWarsAPI.starWarsNextURL] as? String {
                     
                     DispatchQueue.main.async{//why in main queue again?
                         let result = Parser.parseStarWarCharacaterList(jsonResultResponse: results)
                         print(result)
+                        DataSource.starWarsNextURL = nextURL //probably shouldn't be here.. but refractor later
                         self.delegate?.didDownloadAPICharacter()
                     }
                 }

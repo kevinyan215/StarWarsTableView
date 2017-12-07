@@ -9,21 +9,22 @@
 import UIKit
 
 class StarWarsTableViewController: UIViewController {
-    @IBAction func action(_ sender: Any) {
+    @IBAction func addCharacterAction(_ sender: Any) {
         print("""
             My Data Source:
             \(DataSource.starWarsCharacterList)
             """)
+        
+        networkManager.downloadAPICharacterAt(urlString: DataSource.starWarsNextURL)
     }
     
     @IBOutlet weak var tableView: UITableView!
-    
+    let networkManager = NetworkManager()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
-        let networkManager = NetworkManager()
-        networkManager.downloadAPICharacter()
+        networkManager.downloadAPICharacterAt()
         networkManager.delegate = self
 //        Helpers.count() //completion handler executed after main things are done..
 
@@ -57,6 +58,7 @@ extension StarWarsTableViewController: UITableViewDataSource {
 extension StarWarsTableViewController: NetworkManagerDelegate {
     func didDownloadAPICharacter() {
         tableView.reloadData()
+        print(DataSource.starWarsNextURL)
     }
 }
 
