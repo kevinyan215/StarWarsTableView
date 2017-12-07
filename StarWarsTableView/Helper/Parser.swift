@@ -9,7 +9,7 @@
 import Foundation
 
 struct Parser {
-    static func parseStarWarsCharacter(charDetailArray: [String:Any?]) -> StarWarsCharacterModel? {
+    static func parseStarWarsCharacter(charDetailArray: [String:Any]) -> StarWarsCharacterModel? {
         guard
             let name = charDetailArray[StarWarsAPI.charNameKey] as? String,
             let height = charDetailArray[StarWarsAPI.charHeightKey] as? String,
@@ -22,5 +22,16 @@ struct Parser {
         }
         
         return StarWarsCharacterModel(name: name, height: height, mass: mass, hairColor: hairColor, skinColor: skinColor, birthYear: birthYear, gender: gender)
+    }
+    
+    static func parseListOfStarWarCharacater(jsonResultResponse: [[String:Any]]) -> [StarWarsCharacterModel] {
+        var charArray: [StarWarsCharacterModel] = []
+        for eachCharacter in jsonResultResponse {
+            let starWarsCharacterModel: StarWarsCharacterModel? = parseStarWarsCharacter(charDetailArray: eachCharacter)
+            if let character = starWarsCharacterModel {
+                charArray.append(character)
+            }
+        }
+        return charArray
     }
 }

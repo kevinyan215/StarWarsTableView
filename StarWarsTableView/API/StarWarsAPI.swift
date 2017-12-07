@@ -23,4 +23,5 @@ struct StarWarsAPI {
     static let charBirthYearKey = "birth_year"
     static let charGenderKey = "gender"
 
+    static let characterListResults = "results"
 }
