@@ -24,12 +24,13 @@ struct Parser {
         return StarWarsCharacterModel(name: name, height: height, mass: mass, hairColor: hairColor, skinColor: skinColor, birthYear: birthYear, gender: gender)
     }
     
-    static func parseListOfStarWarCharacater(jsonResultResponse: [[String:Any]]) -> [StarWarsCharacterModel] {
+    static func parseStarWarCharacaterList(jsonResultResponse: [[String:Any]]) -> [StarWarsCharacterModel] {
         var charArray: [StarWarsCharacterModel] = []
         for eachCharacter in jsonResultResponse {
             let starWarsCharacterModel: StarWarsCharacterModel? = parseStarWarsCharacter(charDetailArray: eachCharacter)
             if let character = starWarsCharacterModel {
                 charArray.append(character)
+                DataSource.starWarsCharacterList.append(character)
             }
         }
         return charArray

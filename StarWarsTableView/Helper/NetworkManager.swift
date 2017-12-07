@@ -9,7 +9,9 @@
 import Foundation
 
 class NetworkManager {
-    static func downloadAPICharacter(){
+    weak var delegate: NetworkManagerDelegate?
+    
+    func downloadAPICharacter(){
         print("download API Characters")
 //        let urlString = StarWarsAPI.characterEndPoint
         let urlString = StarWarsAPI.characterListEndpoint
@@ -31,17 +33,19 @@ class NetworkManager {
             do {
                 print("session task.. inside do ")
                 //parse individual star wars character
-                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any] {
-                    let parsedModel = Parser.parseStarWarsCharacter(charDetailArray: jsonArray)
-                    print(parsedModel)
-                }
+//                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any] {
+//                    let parsedModel = Parser.parseStarWarsCharacter(charDetailArray: jsonArray)
+//                    print(parsedModel)
+//                }
                 
                 //parse list of star wars characters
                 if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any], let results = jsonArray[StarWarsAPI.characterListResults] as? [[String:Any]]{
                     
-//                    DispatchQueue.main.async{...} //why in main queue again?
-                    let parsedModel = Parser.parseListOfStarWarCharacater(jsonResultResponse: results)
-                        print(parsedModel)
+                    DispatchQueue.main.async{//why in main queue again?
+                        let result = Parser.parseStarWarCharacaterList(jsonResultResponse: results)
+                        print(result)
+                        self.delegate?.didDownloadAPICharacter()
+                    }
                 }
             }
             catch {
@@ -50,7 +54,6 @@ class NetworkManager {
             }
         })
         task.resume()
-        //copy end
     }
     
 //    func downloadAPICharactersAt(url: String){}
