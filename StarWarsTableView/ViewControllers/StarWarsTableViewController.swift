@@ -20,14 +20,29 @@ class StarWarsTableViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let networkManager = NetworkManager()
+    var selectedRow: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
+        tableView.delegate = self
         networkManager.downloadAPICharacterAt()
         networkManager.delegate = self
 //        Helpers.count() //completion handler executed after main things are done..
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? StarWarsCharacterDetailViewController {
+            dest.bundleContainer["name"] = DataSource.starWarsCharacterList[selectedRow!].name
+            dest.bundleContainer["height"] = DataSource.starWarsCharacterList[selectedRow!].height
+            dest.bundleContainer["mass"] = DataSource.starWarsCharacterList[selectedRow!].mass
+            dest.bundleContainer["hairColor"] = DataSource.starWarsCharacterList[selectedRow!].hairColor
+            dest.bundleContainer["skinColor"] = DataSource.starWarsCharacterList[selectedRow!].skinColor
+            dest.bundleContainer["birthYear"] = DataSource.starWarsCharacterList[selectedRow!].birthYear
+            dest.bundleContainer["gender"] = DataSource.starWarsCharacterList[selectedRow!].gender
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -67,6 +82,13 @@ extension StarWarsTableViewController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
         }
+    }
+}
+
+extension StarWarsTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedRow = indexPath.row
+        performSegue(withIdentifier: "segueToStarWarsCharacterDetailVC", sender: self)
     }
 }
 

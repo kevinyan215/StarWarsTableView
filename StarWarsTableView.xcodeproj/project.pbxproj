@@ -22,6 +22,7 @@
 		4D149EDF1FD8F9DE008888D6 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EDE1FD8F9DE008888D6 /* DataSource.swift */; };
 		4D149EE11FD9060F008888D6 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EE01FD9060F008888D6 /* Helpers.swift */; };
 		4D149EE41FD91148008888D6 /* NetworkManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EE31FD91148008888D6 /* NetworkManagerDelegate.swift */; };
+		4D149EE61FD925D0008888D6 /* StarWarsCharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D149EE51FD925D0008888D6 /* StarWarsCharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		4D149EDE1FD8F9DE008888D6 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		4D149EE01FD9060F008888D6 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4D149EE31FD91148008888D6 /* NetworkManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerDelegate.swift; sourceTree = "<group>"; };
+		4D149EE51FD925D0008888D6 /* StarWarsCharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				4D149EA31FD87B4B008888D6 /* StarWarsTableViewController.swift */,
+				4D149EE51FD925D0008888D6 /* StarWarsCharacterDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D149EE61FD925D0008888D6 /* StarWarsCharacterDetailViewController.swift in Sources */,
 				4D149ED01FD87B86008888D6 /* NetworkManager.swift in Sources */,
 				4D149ED71FD889A6008888D6 /* StarWarsCharacterModel.swift in Sources */,
 				4D149EDA1FD88B23008888D6 /* Parser.swift in Sources */,
