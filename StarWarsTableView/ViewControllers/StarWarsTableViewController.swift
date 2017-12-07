@@ -53,6 +53,21 @@ extension StarWarsTableViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
+        print("commit")
+        //does insert need commit?
+        if editingStyle == .delete {
+            DataSource.starWarsCharacterList.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
 }
 
 extension StarWarsTableViewController: NetworkManagerDelegate {
@@ -61,4 +76,3 @@ extension StarWarsTableViewController: NetworkManagerDelegate {
         print(DataSource.starWarsNextURL)
     }
 }
-
