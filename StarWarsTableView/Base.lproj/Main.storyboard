@@ -40,7 +40,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpr-IR-ohu">
-                                                    <rect key="frame" x="220" y="10" width="70" height="25"/>
+                                                    <rect key="frame" x="210" y="10" width="70" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="93I-b9-5ir"/>
                                                         <constraint firstAttribute="width" constant="70" id="uWy-dR-cSl"/>
@@ -50,9 +50,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytr-iY-xnJ">
-                                                    <rect key="frame" x="295" y="10" width="60" height="25"/>
+                                                    <rect key="frame" x="285" y="10" width="80" height="25"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="60" id="13M-pl-Uln"/>
+                                                        <constraint firstAttribute="width" constant="80" id="13M-pl-Uln"/>
                                                         <constraint firstAttribute="height" constant="25" id="gFf-eU-wor"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,12 +61,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Ytr-iY-xnJ" secondAttribute="trailing" constant="20" id="1nv-hv-zEn"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ytr-iY-xnJ" secondAttribute="trailing" constant="10" id="1nv-hv-zEn"/>
                                                 <constraint firstItem="acS-ZS-Hb4" firstAttribute="leading" secondItem="rdT-91-sq2" secondAttribute="leading" constant="20" id="9di-rV-eKW"/>
                                                 <constraint firstItem="acS-ZS-Hb4" firstAttribute="top" secondItem="rdT-91-sq2" secondAttribute="top" constant="10" id="NPO-fw-1FO"/>
                                                 <constraint firstItem="qpr-IR-ohu" firstAttribute="top" secondItem="rdT-91-sq2" secondAttribute="top" constant="10" id="ggL-ew-iz7"/>
                                                 <constraint firstItem="Ytr-iY-xnJ" firstAttribute="top" secondItem="rdT-91-sq2" secondAttribute="top" constant="10" id="qIW-JO-xyu"/>
-                                                <constraint firstItem="qpr-IR-ohu" firstAttribute="leading" secondItem="acS-ZS-Hb4" secondAttribute="trailing" constant="60" id="vdY-5c-Pqe"/>
+                                                <constraint firstItem="qpr-IR-ohu" firstAttribute="leading" secondItem="acS-ZS-Hb4" secondAttribute="trailing" constant="50" id="vdY-5c-Pqe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

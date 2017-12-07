@@ -11,13 +11,13 @@ import Foundation
 struct Parser {
     static func parseStarWarsCharacter(charDetailArray: [String:Any]) -> StarWarsCharacterModel? {
         guard
-            let name = charDetailArray[StarWarsAPI.charNameKey] as? String,
-            let height = charDetailArray[StarWarsAPI.charHeightKey] as? String,
-            let mass = charDetailArray[StarWarsAPI.charMassKey] as? String,
-            let hairColor = charDetailArray[StarWarsAPI.charHairColorKey] as? String,
-            let skinColor = charDetailArray[StarWarsAPI.charSkinColorKey] as? String,
-            let birthYear = charDetailArray[StarWarsAPI.charBirthYearKey] as? String,
-            let gender = charDetailArray[StarWarsAPI.charGenderKey] as? String else {
+            let name = charDetailArray[StarWarsAPI.CharacterDetailKeys.charNameKey] as? String,
+            let height = charDetailArray[StarWarsAPI.CharacterDetailKeys.charHeightKey] as? String,
+            let mass = charDetailArray[StarWarsAPI.CharacterDetailKeys.charMassKey] as? String,
+            let hairColor = charDetailArray[StarWarsAPI.CharacterDetailKeys.charHairColorKey] as? String,
+            let skinColor = charDetailArray[StarWarsAPI.CharacterDetailKeys.charSkinColorKey] as? String,
+            let birthYear = charDetailArray[StarWarsAPI.CharacterDetailKeys.charBirthYearKey] as? String,
+            let gender = charDetailArray[StarWarsAPI.CharacterDetailKeys.charGenderKey] as? String else {
             return nil
         }
         

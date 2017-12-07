@@ -11,7 +11,7 @@ import Foundation
 class NetworkManager {
     var delegate: NetworkManagerDelegate?
     
-    func downloadAPICharacterAt(urlString: String? = StarWarsAPI.characterListEndpoint){
+    func downloadAPICharacterAt(urlString: String? = StarWarsAPI.EndPoints.characterListEndpoint){
         print("download API Characters")
 //        let urlString = StarWarsAPI.characterEndPoint
 //        let urlString = StarWarsAPI.characterListEndpoint
@@ -39,7 +39,7 @@ class NetworkManager {
 //                }
                 
                 //parse list of star wars characters
-                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any], let results = jsonArray[StarWarsAPI.characterListResults] as? [[String:Any]], let nextURL = jsonArray[StarWarsAPI.starWarsNextURL] as? String {
+                if let jsonArray = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String:Any], let results = jsonArray[StarWarsAPI.CharacterListKeys.characterListResults] as? [[String:Any]], let nextURL = jsonArray[StarWarsAPI.CharacterListKeys.starWarsNextURL] as? String {
                     
                     DispatchQueue.main.async{//why in main queue again?
                         let result = Parser.parseStarWarCharacaterList(jsonResultResponse: results)
