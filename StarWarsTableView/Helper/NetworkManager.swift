@@ -43,7 +43,7 @@ class NetworkManager {
                     
                     DispatchQueue.main.async{//why in main queue again?
                         let result = Parser.parseStarWarCharacaterList(jsonResultResponse: results)
-                        print(result)
+//                        print(result)
                         DataSource.starWarsNextURL = nextURL //probably shouldn't be here.. but refractor later
                         self.delegate?.didDownloadAPICharacter()
                     }

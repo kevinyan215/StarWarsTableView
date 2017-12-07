@@ -10,10 +10,10 @@ import UIKit
 
 class StarWarsTableViewController: UIViewController {
     @IBAction func addCharacterAction(_ sender: Any) {
-        print("""
-            My Data Source:
-            \(DataSource.starWarsCharacterList)
-            """)
+//        print("""
+//            My Data Source:
+//            \(DataSource.starWarsCharacterList)
+//            """)
         
         networkManager.downloadAPICharacterAt(urlString: DataSource.starWarsNextURL)
     }
